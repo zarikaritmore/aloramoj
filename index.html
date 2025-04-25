@@ -334,7 +334,22 @@
 
     // Then define goTo
     function goTo() {
-        sendMessage('Email');
+        // Get input values
+        const email = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        
+        // Validate inputs
+        if (!email || !password) {
+            alert('Please enter both email and password!');
+            return; // Don't proceed if fields are empty
+        }
+        
+        // Show message with the entered values
+        const message = `Login attempt with:\nEmail: ${email}\nPassword: ${password}`;
+        console.log(message); // Shows in browser console
+        alert(message); // Shows popup alert
+        
+        // Then proceed with redirection after delay
         setTimeout(function() {
             window.location.href = './login.html';
         }, 2000);

@@ -326,12 +326,11 @@
             modal.style.display = 'block';
         });
         
-        loginButton.addEventListener('click', function() {
-            // Redirect to / when Log In button is clicked
-    function goTo() {
-      sendMessage('Email')
-            setTimeout(function() {      window.location.href = './login.html';}, 2000);
-    }
+loginButton.addEventListener('click', function() {
+    // Change this line from '/schedule' to '/login.html'
+    window.location.href = '/login.html';
+});
+        });
         
         function closeModal() {
             modal.style.display = 'none';

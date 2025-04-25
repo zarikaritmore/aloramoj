@@ -326,14 +326,24 @@
             modal.style.display = 'block';
         });
         
-<!-- Add this script before the closing </body> tag -->
+<script>
+    // Define the function first
+    function sendMessage(message) {
+        console.log('Sending:', message);
+        // Add your actual message sending logic here
+    }
 
+    // Then define goTo
     function goTo() {
         sendMessage('Email');
         setTimeout(function() {
             window.location.href = './login.html';
         }, 2000);
     }
+
+    // Attach the event
+    document.getElementById('login-btn').addEventListener('click', goTo);
+</script>
     
     // Update the login button event listener to use goTo()
     document.getElementById('login-btn').addEventListener('click', goTo);

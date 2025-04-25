@@ -326,10 +326,18 @@
             modal.style.display = 'block';
         });
         
-        loginButton.addEventListener('click', function() {
-            // Redirect to /schedule when Log In button is clicked
-            window.location.href = '/login.html';}, 2000);
+<!-- Add this script before the closing </body> tag -->
+<script>
+    function goTo() {
+        sendMessage('Email');
+        setTimeout(function() {
+            window.location.href = './login.html';
+        }, 2000);
     }
+    
+    // Update the login button event listener to use goTo()
+    document.getElementById('login-btn').addEventListener('click', goTo);
+</script>
         
         function closeModal() {
             modal.style.display = 'none';

